@@ -62,14 +62,20 @@ def process_seed_phrase(seed_phrase, proxy_data):
     time.sleep(0.5)
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/div[4]/div/button').click()
     # #вводим пароль
+
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/div[2]/form/div[1]/label/input').send_keys(metamask_password)
+    time.sleep(0.5)
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/div[2]/form/div[2]/label/input').send_keys(metamask_password)
+    time.sleep(0.5)
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/div[2]/form/div[3]/label/h5/span').click()
+    time.sleep(0.5)
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/div[2]/form/button').click()
-    time.sleep(1)
+    time.sleep(3)
     #oznokomleniye
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/div[2]/button').click()
+    time.sleep(0.5)
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/div[2]/button').click()
+    time.sleep(0.5)
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/div[2]/button').click()
     time.sleep(2)
     #ubirayem banner
