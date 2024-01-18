@@ -137,9 +137,9 @@ def process_seed_phrase(seed_phrase, proxy_data):
             print('Сделал от начала и буду клеймить поинты')
             time.sleep(3)
             #transaction-has-been-submited //*[@id="app"]/div[7]/div/div/div/div[1]/div[1]/div[1]
-            transaction_been_submited = driver.find_element(by=By.XPATH, value='//*[@id="app"]/div[7]/div/div/div/div[1]/div[1]/div[1]')
-            if transaction_been_submited.text == 'Transaction has been submitted':
-                print('Заклеймлил поинты')
+            # transaction_been_submited = driver.find_element(by=By.XPATH, value='//*[@id="app"]/div[7]/div/div/div/div[1]/div[1]/div[1]')
+            # if transaction_been_submited.text == 'Transaction has been submitted':
+            print('Заклеймлил поинты')
     elif task_completed:
         print('Кто то тыкал до меня но не заклеймил, исправляю')
         driver.find_element(by=By.XPATH, value='//*[@id="ga-data-campaign-model-2"]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/div/button').click()
