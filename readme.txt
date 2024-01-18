@@ -6,7 +6,7 @@ galxe. com/Berachain/campaign/GCTN3ttM4T
 в текстовый файл seed_phrase вставляете свои приватники
 прокси в формате ip:port:login:password
 визуальные эффекты включены если хотите выключить можете добавить код ниже в main.py
-chrome_options.add_argument('--headless')
+options.add_argument('--headless')
 # Запустить в безголовом режиме (без GUI) на 25 строке в основном файле.
 Возможно будут ошибки можно просто заново запустить все аккаунты с ошибками будут храниться в текстовом файле failed_accounts
 tg: ayodude0
