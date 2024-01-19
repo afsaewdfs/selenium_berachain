@@ -176,7 +176,7 @@ with open('seed_phrase.txt', 'r') as seed_file, open('proxies.txt', 'r') as prox
         except Exception as e:
             print(f"Ошибка при обработке аккаунта {account_number}: {e}")
             failed_accounts += 1
-            failed_file.write(f"Аккаунт {account_number}: {seed_phrase.strip()}\n")
+            failed_file.write(f"{seed_phrase.strip()}\n")
 print(f'#-------------------------------------------------------------------')
 print(f"Общее количество успешных аккаунтов: {successful_accounts}")
 print(f"Общее количество аккаунтов с ошибками: {failed_accounts}")
