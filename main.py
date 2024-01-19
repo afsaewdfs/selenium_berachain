@@ -8,6 +8,7 @@ from multiprocessing import Pool
 from selenium.webdriver.support.ui import WebDriverWait
 from fake_useragent import UserAgent
 from selenium.webdriver.support import expected_conditions as EC
+from selenium_stealth import stealth
 import time
 
 successful_accounts = 0
@@ -38,6 +39,13 @@ def process_seed_phrase(seed_phrase, proxy_data):
                               options=options,
                               seleniumwire_options=proxy_options,
                               )
+    # stealth(driver,
+    #         languages=['en-US', 'en'],
+    #         vendor='Google Inc.',
+    #         platform='Win32',
+    #         webgl_vendor='Intel Inc.',
+    #         renderer='Intel Iris OpenGL Engine',
+    #         fix_hairline=True)
 
     driver.implicitly_wait(15)
     driver.maximize_window()
@@ -52,7 +60,7 @@ def process_seed_phrase(seed_phrase, proxy_data):
     time.sleep(3)
     driver.find_element(by=By.XPATH, value='//*[@id="onboarding__terms-checkbox"]').click()
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/ul/li[3]/button').click()
-    time.sleep(0.5)
+    time.sleep(1)
     driver.find_element(by=By.XPATH, value='//*[@id="app-content"]/div/div[2]/div/div/div/div/button[1]').click()
     recovery_phrase = seed_phrase.split()
 
@@ -158,6 +166,7 @@ with open('seed_phrase.txt', 'r') as seed_file, open('proxies.txt', 'r') as prox
     proxies = proxy_file.readlines()
 
     for account_number, (seed_phrase, proxy_data) in enumerate(zip(seed_phrases, proxies), start=1):
+        print('#-------------------------------------------------------------------')
         print(f"Обработка аккаунта {account_number}")
         print('#-------------------------------------------------------------------')
 
